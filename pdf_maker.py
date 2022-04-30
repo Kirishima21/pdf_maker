@@ -121,10 +121,11 @@ def pdf_builder(data):
 
     # バラバラのpdfを一つにまとめましょうね～
     merge = PyPDF2.PdfFileMerger()
-    for pdf in range(1, int(imageCount)):
+    for pdf in range(1, int(imageCount + 1)):
         fragment = "trash/" + str(pdf) + ".pdf"
         merge.append(fragment)
     merge.write(str(title) + ".pdf")
+    merge.close
     merge.close()
     shutil.rmtree("./trash")
 
