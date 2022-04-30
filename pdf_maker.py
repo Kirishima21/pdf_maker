@@ -103,7 +103,7 @@ def pdf_builder(data):
             shutil.copy(file, 'trash')
 
 
-    files = catch_jpgs()
+    files = sorted(catch_jpgs())
     imageCount = len(files)
     count = 1
 
